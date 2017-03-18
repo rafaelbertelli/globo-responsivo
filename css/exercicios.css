@@ -1,0 +1,142 @@
+img {
+	max-width: 100%;
+}
+
+header {
+	padding: 0.5em 0;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 1em;
+}
+
+.destaques {
+	margin-top: 1rem;
+}
+
+@media (min-width: 426px) {
+	.secao {
+		width: 50%;
+		float: left;
+	}
+}
+
+@media (min-width: 767px) {
+	.logo, .secao {
+		padding: 0 1%;
+		float: left;
+	}
+
+	.logo, .busca, .barra-nav, .menu-principal {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.menu-principal li {
+		float: left;
+	}
+
+	.barra-nav {
+		margin: 0.4em 0;
+	}
+	.secao {
+		width: 33.333%;
+		float: left;
+	}
+}
+
+@media (max-width: 767px) {
+	.mini {
+		width: 50%;
+		float: left;
+	}
+
+	.barra-nav {
+        background: #f0f0f0;
+        padding: 1em;
+        margin: 0;
+
+        height: 100%;
+        width: 90%;
+        max-width: 320px;
+
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: -90%;
+
+        transition: left 0.3s ease-out;
+    }
+        .menu-ativo .barra-nav {
+            left: 0;
+        }
+
+    .menu-principal li:first-child {
+        padding: 1em 0 0 0;
+        width: 100%;
+    }
+
+    .menu-principal li {
+        width: 100%;
+    }
+
+    .menu-principal li:last-child {
+        padding: 0 0 1em 0;
+        width: 100%;
+    }
+
+    .menu-ativo:after {
+    	content: "";
+    	display: block;
+    	position: fixed;
+    	top: 0;
+    	bottom: 0;
+    	left: 0;
+    	right: 0;
+    	background: rgba(0,0,0,0.5);
+    }
+}
+
+@media not all and (max-width: 767px) {
+    .abre-menu,
+    .fecha-menu {
+        display: none;
+    }    
+}
+
+.abre-menu,
+.fecha-menu {
+	background: none;
+	border: none;
+	outline: none;
+	-webkit-appearance: none;
+	font-size: 1.6em;
+	text-indent: -999em;
+}
+
+.abre-menu {
+	height: 0;
+	width: .75em;
+	padding-top: .125em;
+	border-top: .375em double #000;
+	border-bottom: .125em solid #000;
+	vertical-align: middle;
+    margin: 0.5em 0.5em 0 0; 
+    float: left;
+}
+
+.fecha-menu {
+	position: relative;
+    height: 1em;
+    width: 1em;
+}
+
+.fecha-menu:before {
+	content: '\00D7';
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-indent: 0;
+}
